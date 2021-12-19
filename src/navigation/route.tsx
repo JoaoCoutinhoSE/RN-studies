@@ -8,8 +8,16 @@ const { Screen, Navigator } = createBottomTabNavigator();
 export function Routes() {
   return (
     <Navigator>
-      <Screen name="Tela um" component={FirstScreen} />
-      <Screen name="Tela dois" component={SecondScreen} />
+      <Screen
+        name="First screen"
+        component={FirstScreen}
+        options={{ headerShown: false }}
+      />
+      <Screen
+        name="Second screen"
+        component={SecondScreen}
+        options={{ headerShown: false }}
+      />
     </Navigator>
   );
 }
