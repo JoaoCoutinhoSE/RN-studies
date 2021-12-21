@@ -1,7 +1,14 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Button } from "react-native";
+import { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
+import { NavigationProp } from "@react-navigation/native";
 
-export function FirstScreen() {
+interface BananaProps {
+  id: number;
+  name: string;
+}
+
+export function FirstScreen({ navigation }: any) {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -13,6 +20,7 @@ export function FirstScreen() {
   return (
     <View style={styles.container}>
       <Text>first screen</Text>
+      <Button title="navigate" onPress={() => navigation.navigate("Flux")} />
     </View>
   );
 }

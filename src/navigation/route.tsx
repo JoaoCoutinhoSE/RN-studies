@@ -2,22 +2,26 @@ import React from "react";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { FirstScreen, SecondScreen } from "../screens";
+import { createStackNavigator } from "@react-navigation/stack";
+import { Flux } from "../screens/flux";
 
-const { Screen, Navigator } = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 export function Routes() {
   return (
-    <Navigator>
-      <Screen
-        name="First screen"
-        component={FirstScreen}
-        options={{ headerShown: false }}
-      />
-      <Screen
-        name="Second screen"
-        component={SecondScreen}
-        options={{ headerShown: false }}
-      />
-    </Navigator>
+    <>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="First screen"
+          component={Flux}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Second screen"
+          component={SecondScreen}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+    </>
   );
 }
